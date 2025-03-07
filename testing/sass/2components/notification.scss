@@ -1,0 +1,45 @@
+.badge-notifications {
+    top: 7px !important;
+    inset-inline-end: -2px;
+}
+
+.badge.badge-notifications {
+    position: absolute;
+    display: inline-block;
+    margin: 0;
+    transform: translate(-50%, -45%);
+}
+.badge.badge-dot {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.bg-label-primary {
+    background-color: #e9e7fd !important;
+    color: #7367f0 !important;
+}
+.bg-label-info {
+    background-color: #d6f4f8 !important;
+    color: #00bad1 !important;
+}
+.bg-label-secondary {
+    background-color: #ebebed !important;
+    color: #808390 !important;
+}
+.bg-label-danger {
+    background-color: #ffe2e3 !important;
+    color: #ff4c51 !important;
+}
+.bg-label-warning {
+    background-color: #fff0e1 !important;
+    color: #ff9f43 !important;
+}
+.bg-label-success {
+    background-color: #ddf6e8 !important;
+    color: #28c76f !important;
+}

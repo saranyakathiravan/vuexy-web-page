@@ -1,0 +1,46 @@
+.customScrollBar {
+    scrollbar-width: thin;
+  
+
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 3px;
+        display: none;
+
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #9e9e9e3d;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #ccc;
+    }
+}
+
+[data-themetype="dark"] {
+    ::-webkit-scrollbar-thumb {
+        background: #7d7d7d;
+    }
+}
+
+.customScrollBar::-webkit-scrollbar {
+    width: 2px;
+    height: 3px;
+}
+
+/* Track */
+.customScrollBar::-webkit-scrollbar-track {
+    background: #9e9e9e3d;
+}
+
+/* Handle */
+.customScrollBar::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+.customScrollBarX::-webkit-scrollbar {
+    height: 2px !important;
+}

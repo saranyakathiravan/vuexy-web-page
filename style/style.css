@@ -1,0 +1,678 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+:root {
+  --leftSideMenuLayout: 260px;
+  --c-textColor: #6d6b77;
+  --c-sideNavBg: #fff;
+  --c-border-light: #e9e9e9;
+  --c-defaultSvgColor: #535158;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  line-height: 1.4;
+  color: var(--c-textColor);
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-textColor);
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: #acaab1 !important;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJPax9k0.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJLax9k0.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJzaxw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJPax9k0.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJLax9k0.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJzaxw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJPax9k0.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJLax9k0.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJzaxw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJPax9k0.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJLax9k0.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJzaxw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJPax9k0.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJLax9k0.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwTs572Xtc6ZYQws9YVwnNDTJzaxw.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNJfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNIfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNGfJ4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNJfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNIfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNGfJ4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNJfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNIfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNGfJ4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNJfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNIfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNGfJ4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNJfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNIfJ7Cww.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/publicsans/v18/ijwRs572Xtc6ZYQws9YVwnNGfJ4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+.badge-notifications {
+  top: 7px !important;
+  inset-inline-end: -2px;
+}
+
+.badge.badge-notifications {
+  position: absolute;
+  display: inline-block;
+  margin: 0;
+  transform: translate(-50%, -45%);
+}
+
+.badge.badge-dot {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.bg-label-primary {
+  background-color: #e9e7fd !important;
+  color: #7367f0 !important;
+}
+
+.bg-label-info {
+  background-color: #d6f4f8 !important;
+  color: #00bad1 !important;
+}
+
+.bg-label-secondary {
+  background-color: #ebebed !important;
+  color: #808390 !important;
+}
+
+.bg-label-danger {
+  background-color: #ffe2e3 !important;
+  color: #ff4c51 !important;
+}
+
+.bg-label-warning {
+  background-color: #fff0e1 !important;
+  color: #ff9f43 !important;
+}
+
+.bg-label-success {
+  background-color: #ddf6e8 !important;
+  color: #28c76f !important;
+}
+
+.customScrollBar {
+  scrollbar-width: thin;
+  /* Track */
+  /* Handle */
+}
+.customScrollBar ::-webkit-scrollbar {
+  width: 2px;
+  height: 3px;
+  display: none;
+}
+.customScrollBar ::-webkit-scrollbar-track {
+  background: rgba(158, 158, 158, 0.2392156863);
+}
+.customScrollBar ::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+[data-themetype=dark] ::-webkit-scrollbar-thumb {
+  background: #7d7d7d;
+}
+
+.customScrollBar::-webkit-scrollbar {
+  width: 2px;
+  height: 3px;
+}
+
+/* Track */
+.customScrollBar::-webkit-scrollbar-track {
+  background: rgba(158, 158, 158, 0.2392156863);
+}
+
+/* Handle */
+.customScrollBar::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+.customScrollBarX::-webkit-scrollbar {
+  height: 2px !important;
+}
+
+.mainSideBar {
+  height: 100%;
+  left: -260px;
+  position: fixed;
+  top: 0;
+  transform: unset;
+  z-index: 999;
+}
+.mainSideBar.active {
+  left: 0 !important;
+}
+.mainSideBar .mainSideBarPanel {
+  background-color: var(--c-sideNavBg);
+  box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.12);
+  border-right: 1px solid var(--c-border-light);
+  display: flex;
+  position: unset;
+  flex-direction: column;
+  height: 100%;
+  width: var(--leftSideMenuLayout);
+}
+.mainSideBar .mainSideBarPanel .sideBarTopBlock .sideBardLogoPanel {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 16px 0px 22px;
+}
+.mainSideBar .mainSideBarPanel .sideBarTopBlock .sideBardLogoPanel .logoMain {
+  height: 64px;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  line-height: 1;
+  min-height: 1px;
+  align-items: center;
+}
+.mainSideBar .mainSideBarPanel .sideBarTopBlock .sideBardLogoPanel .logoMain .logoLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mainSideBar .mainSideBarPanel .sideBarTopBlock .sideBardLogoPanel .logoMain .logoLink .logoText {
+  color: #444050;
+  font-size: 22px;
+  font-weight: 700;
+}
+.mainSideBar .mainSideBarPanel .sideBarMenuBlock {
+  height: 100%;
+  overflow-y: auto;
+  padding: 5px 12px;
+}
+.mainSideBar .mainSideBarPanel .sideBarMenuBlock .menuList-header {
+  border-radius: 3px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 5px;
+}
+.mainSideBar .mainSideBarPanel .sideBarMenuBlock .menuList-header.active, .mainSideBar .mainSideBarPanel .sideBarMenuBlock .menuList-header:hover {
+  background-color: rgba(47, 43, 61, 0.08);
+}
+.mainSideBar .mainSideBarPanel .sideBarMenuBlock .sideMenuSubheading {
+  padding: 15px 0px 15px;
+  font-size: 13px;
+}
+.mainSideBar .mainSideBarPanel .sideBarMenuBlock .sideMenuSubheading .menuHeaderText {
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  color: #acaab1;
+}
+.mainSideBar .mainSideBarPanel .sideBarToggleParent {
+  cursor: pointer;
+}
+.mainSideBar .mainSideBarPanel .sideBarToggleParent .menuList .menu-link .leftSideBarIcons.arrow {
+  transition: all 0.5s ease;
+  transform-origin: center;
+}
+.mainSideBar .mainSideBarPanel .sideBarToggleParent .menuList .menu-link[aria-expanded=true] .leftSideBarIcons.arrow {
+  transform: rotate(0deg);
+}
+.mainSideBar .mainSideBarPanel .sideBarToggleParent .menuList .menu-link[aria-expanded=false] .leftSideBarIcons.arrow {
+  transform: rotate(-90deg);
+}
+.mainSideBar .mainSideBarPanel .menuBarList {
+  align-items: center;
+  border-radius: 3px;
+  display: flex;
+  font-size: 15px;
+  line-height: normal;
+  margin-bottom: 4px;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  width: 100%;
+}
+.mainSideBar .mainSideBarPanel .menuBarList.hoverBlock:hover {
+  background-color: #efeef0;
+}
+.mainSideBar .mainSideBarPanel .menuBarList.childMenuList.active {
+  background: linear-gradient(270deg, rgba(115, 103, 240, 0.7) 0%, #7367f0 100%);
+  box-shadow: 0px 2px 6px 0px rgba(115, 103, 240, 0.3);
+  color: #fff !important;
+}
+.mainSideBar .mainSideBarPanel .menuBarList.childMenuList.active svg {
+  fill: #fff;
+}
+.mainSideBar .mainSideBarPanel .menuBarList .menuBarListIcon {
+  display: flex;
+  margin: 0 8px 0 0px;
+}
+.mainSideBar .mainSideBarPanel .leftSideBarIcons {
+  fill: var(--c-defaultSvgColor);
+  border-radius: 0 !important;
+  height: 17px !important;
+  padding: 0 !important;
+  width: 17px !important;
+  margin-left: 16px;
+}
+.mainSideBar .mainSideBarPanel .leftSideBarIcons.childMenuIcon {
+  margin-left: 0;
+}
+
+@media (min-width: 1200px) {
+  .mainSideBar {
+    left: 0px;
+  }
+}
+.mainContentWrapper {
+  position: unset;
+  width: 100%;
+  height: 100%;
+  padding-left: 0px;
+}
+.mainContentWrapper.page-with-super-sidebar {
+  transition: padding-left 0.2s, transform 0.2s;
+}
+
+@media (min-width: 1200px) {
+  .mainContentWrapper {
+    padding-left: 260px;
+  }
+}
+.navbar {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  color: #444050;
+  box-shadow: 0 2px 8px 0 rgba(47, 43, 61, 0.12);
+  backdrop-filter: saturate(200%) blur(6px);
+  border-radius: 5px !important;
+  padding: 0 15px !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: relative;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  height: 3.5rem;
+  flex-wrap: nowrap !important;
+  color: #6d6b77;
+  z-index: 2;
+  width: calc(100% - 50px) !important;
+  margin: 24px !important;
+  margin-bottom: 0 !important;
+}
+.navbar .navbar-nav.right .nav-item .nav-link:not(.userProfile) {
+  border-radius: 50%;
+  width: 40px;
+  height: auto;
+}
+.navbar .navbar-nav.right .nav-item .nav-link:not(.userProfile):hover {
+  background-color: var(--c-border-light);
+}
+.navbar .pinNav .unpin {
+  display: none;
+}
+.navbar .pinNav.active .pin {
+  display: none;
+}
+.navbar .pinNav.active .unpin {
+  display: block;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+}
+.avatar:after {
+  background-color: #28c76f;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.analyticsMain {
+  margin: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: stretch;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+
+.cardOne {
+  background-color: #7367f0;
+  border-radius: 0.375rem;
+  color: #fff;
+  box-shadow: 0 0.1875rem 0.75rem 0 rgba(47, 43, 61, 0.14);
+}
+.cardOne .analyticsCount {
+  background-color: #6258cc;
+  padding: 0.293rem 0.5rem;
+  border-radius: 0.375rem;
+  min-width: 48px;
+  text-align: center;
+}
+
+.card {
+  background-clip: padding-box;
+  box-shadow: 0 0.1875rem 0.75rem 0 rgba(47, 43, 61, 0.14);
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+.card .card-header {
+  border-bottom: 0;
+  background-color: unset;
+  color: #6d6b77 !important;
+  padding: 20px;
+}
+.card .card-header .card-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.card .card-header .text-body {
+  font-size: 15px;
+  line-height: 34px;
+}
+.card .card-header .card-subtitle {
+  color: #8d8a94 !important;
+  font-size: 15px !important;
+}
+
+.row > * {
+  margin-top: 24px !important;
+}
+
+.divider {
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.divider .divider-text {
+  position: relative;
+  display: inline-block;
+  font-size: 0.9375rem;
+  padding: 0rem 1rem;
+  color: #444050;
+}
+.divider.divider-vertical {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: unset;
+}
+.divider.divider-vertical .divider-text {
+  background-color: #fff;
+  z-index: 1;
+  padding: 0.5125rem;
+}
+.divider.divider-vertical .divider-text .badge-divider-bg {
+  padding: 0.313rem 0.252rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  background-color: rgba(47, 43, 61, 0.06);
+  color: #acaab1;
+}
+.divider.divider-vertical:before {
+  bottom: 50%;
+  top: 0;
+}
+.divider.divider-vertical:after {
+  top: 50%;
+  bottom: 0;
+}
+.divider.divider-vertical:after, .divider.divider-vertical:before {
+  content: "";
+  position: absolute;
+  left: 48%;
+  border-left: 1px solid rgba(47, 43, 61, 0.12);
+}
+
+#carouselExampleIndicators .carousel-indicators {
+  bottom: unset !important;
+  justify-content: end !important;
+  top: 25px !important;
+}
+#carouselExampleIndicators .carousel-indicators [data-bs-target] {
+  width: 7px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */
